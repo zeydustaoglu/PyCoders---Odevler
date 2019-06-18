@@ -1,0 +1,96 @@
+--------------------  1  ------------------------------
+kelime=input("kelime girin:")
+
+print("""
+        
+         ****************  
+         *              *       
+         *              *   """)
+print("              ",kelime,"\n","              ","_"*len(kelime),sep="")
+print("""
+         *              *
+         *              * 
+         ****************
+""")
+--------------------  2  ------------------------------
+
+km=float(input("km cinsinden mesafenizini girin:"))
+mile=km*(0.62137)
+
+print("mile cinsinden mesafeniz: {}".format(mile))
+
+
+--------------------  3  ------------------------------
+
+ad=input("Ogrenci Adi:")
+soyad=input("Ogrenci Adi:")
+vize=int(input("Vize Notunu :"))
+final=int(input("Final Notunu :"))
+kacirilan_ders=int(input("Kacirdiginiz Ders Adeti:"))
+
+if kacirilan_ders>20 or kacirilan_ders<0:
+    print("Lutfen Gecerli Bir Sayi Girin..")
+    kacirilan_ders = int(input("kacirdiginiz Ders Adetini Girin:"))
+
+ders_takip_puani=100-(kacirilan_ders*5)
+yil_sonu_puani=vize*0.3+final*0.5+ders_takip_puani*0.2
+
+print("Yil Sonu Puani: {}".format(yil_sonu_puani))
+
+open("OgrenciNotHesaplama.txt","w")
+file = open("OgrenciNotHesaplama.txt","w")
+file.write("Adi : "+ad+"\n"+"Soyad : "+soyad+"\n"+"Yil Sonu Notu : "+str(yil_sonu_puani))
+file.close()
+--------------------  4  ------------------------------
+
+ana_para=float(input("Ana para:"))
+faiz_suresi=float(input("Fazi Suresi(yil):"))
+faiz_orani=float(input("Faiz Orani(%):"))
+
+if faiz_orani<0 or faiz_orani>100:
+    print("Lutfen Gecerli Bir Oran Girin!")
+    faiz_orani = float(input("Faiz Orani(%):"))
+
+
+yillik_faiz=(ana_para*faiz_suresi*faiz_orani)/100
+aylik_faiz=(yillik_faiz)/12
+gunluk_faiz=(aylik_faiz)/30
+
+print("Yillik Faiz: {} \nAylik Faiz: {} \nGunluk Faiz: {}".format(yillik_faiz,aylik_faiz,gunluk_faiz))
+
+open("FaizHesaplama.txt","w")
+file = open("FaizHesaplama.txt","w")
+file.write("Yillik Faiz: {} \nAylik Faiz: {} \nGunluk Faiz: {}".format(yillik_faiz,aylik_faiz,gunluk_faiz))
+file.close()
+
+--------------------  5  ------------------------------
+
+aylik_gelir=int(input("Aylik Geliriniz:"))
+mutfak_harcamasi=int(input("Mutfak Harcamasi:"))
+egitim_harcamasi=int(input("Egitim Harcamasi:"))
+giyim_harcamasi=int(input("Giyim Harcamasi:"))
+ulasim_harcamasi=int(input("Ulasim Harcamasi:"))
+
+toplam_harcama=mutfak_harcamasi+egitim_harcamasi+giyim_harcamasi+ulasim_harcamasi
+gelir_gider_endeksi=toplam_harcama/aylik_gelir
+
+print("Aylik Giderinizin Gelirinize Orani: {}".format(gelir_gider_endeksi))
+
+if gelir_gider_endeksi>=0.5:
+    print("Dikkat! Zararli Harcama!")
+elif gelir_gider_endeksi>0.3 and gelir_gider_endeksi<0.5:
+    print("Standart Harcama!")
+else:
+    print("Tebrikler! Ideal Harcama!")
+
+open("AylikMasraf.txt","w")
+file = open("AylikMasraf.txt","w")
+file.write("Aylik Giderinizin Gelirinize Orani: {}".format(gelir_gider_endeksi))
+file.close()
+
+
+--------------------  6  ------------------------------
+
+print("Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki \"Universiteit Van Amsterdam"+"okulundan 1982’de mezun olmuştur")
+print('Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki "Universiteit Van Amsterdam" okulundan 1982’de mezun olmuştur.')
+print("""Python’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki "Universiteit Van Amsterdam" okulundan 1982’de mezun olmuştur.""")
