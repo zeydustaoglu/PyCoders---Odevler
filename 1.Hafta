@@ -64,8 +64,9 @@ print("Yillik Faiz: {} \nAylik Faiz: {} \nGunluk Faiz: {} \nToplam Para: {}".for
 
 open("FaizHesaplama.txt","w")
 file = open("FaizHesaplama.txt","w")
-file.write("Yillik Faiz: {} \nAylik Faiz: {} \nGunluk Faiz: {}\nToplam Para:".format(yillik_faiz,aylik_faiz,gunluk_faiz,toplam_para))
+file.write("Yillik Faiz: {} \nAylik Faiz: {} \nGunluk Faiz: {}\nToplam Para: {}".format(yillik_faiz,aylik_faiz,gunluk_faiz,toplam_para))
 file.close()
+
 
 
 --------------------  5  ------------------------------
