@@ -1,1 +1,173 @@
 
+*****************************   BURCUN NE?   *****************************
+
+while True:
+    gun = int(input("Dogum Gununuzu Giriniz :"))
+    ay = input("Dogdugunuz Ayi Girin:")
+    gunler = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+              30, 31, 32]
+
+    if ((ay == "Mart" or ay == "mart") and gun in gunler[20:31]) or ((ay == "Nisan" or ay == "nisan") and gun in gunler[0:20]):
+        print("Burcunuz: Koc")
+
+    elif ((ay == "Nisan" or ay == "nisan") and gun in gunler[20:30]) or ((ay == "Mayis" or ay == "mayis") and gun in gunler[0:21]):
+        print("Burcunuz: Boga")
+
+    elif ((ay == "Mayis" or ay == "mayis") and gun in gunler[21:31]) or ((ay == "Haziran" or ay == "haziran") and gun in gunler[0:22]):
+        print("Burcunuz: Ikizler")
+
+    elif ((ay == "Haziran" or ay == "haziran") and gun in gunler[22:30]) or ((ay == "Temmuz" or ay == "temmuz") and gun in gunler[0:23]):
+        print("Burcunuz: Yengec")
+
+    elif ((ay == "Temmuz" or ay == "temmuz") and gun in gunler[22:31]) or ((ay == "Agustos" or ay == "agustos") and gun in gunler[0:22]):
+        print("Burcunuz: Aslan")
+
+    elif ((ay == "Agustos" or ay == "agustos") and gun in gunler[22:31]) or ((ay == "Eylul" or ay == "eylul") and gun in gunler[0:22]):
+        print("Burcunuz: Basak")
+
+    elif ((ay == "Eylul" or ay == "eylul") and gun in gunler[22:30]) or ((ay == "Ekim" or ay == "ekim") and gun in gunler[0:22]):
+        print("Burcunuz: Terazi")
+
+    elif ((ay == "Ekim" or ay == "ekim") and gun in gunler[22:31]) or ((ay == "Kasim" or ay == "kasim") and gun in gunler[0:21]):
+        print("Burcunuz: Akrep")
+
+    elif ((ay == "Kasim" or ay == "kasim") and gun in gunler[21:30]) or ((ay == "Aralik" or ay == "aralik") and gun in gunler[0:21]):
+        print("Burcunuz: Yay")
+
+    elif ((ay == "Aralik" or ay == "aralik") and gun in gunler[21:31]) or ((ay == "Ocak" or ay == "ocak") and gun in gunler[0:21]):
+        print("Burcunuz: Oglak")
+
+    elif ((ay == "Ocak" or ay == "ocak") and gun in gunler[21:31]) or ((ay == "Subat" or ay == "subat") and gun in gunler[0:19]):
+        print("Burcunuz: Kova")
+
+    elif ((ay == "Subat" or ay == "subat") and gun in gunler[19:28]) or ((ay == "Mart" or ay == "mart") and gun in gunler[0:20]):
+        print("Burcunuz: Balik")
+
+    else:
+        print("Lutfen gecerli bir tarih girin!")
+
+
+*****************************   UZAKLIK BIRIMI DONUSUMU   *****************************
+
+print("""
+
+Km-Mil icin 1 e
+Mil-Km icin 2 ye 
+Cikis  icin q ya basiniz...
+
+""")
+
+while True:
+    islem = input("Yapmak Istediginiz Islemi Secin:")
+    if (islem == "1"):
+        km = float(input("Km girin:"))
+        mil=km*(0.62137)
+        print("{} Km {} Mil dir".format(km,round(mil,4)))
+    elif (islem == "2"):
+        mil = float(input("Mil girin:"))
+        km=mil/(0.62137)
+        print("{} Mil {} Km dir".format(mil, round(km,4)))
+    elif (islem == "q"):
+        print("Cikis Yapiliyor....")
+        break
+
+
+*****************************   PAROLA KARAKTER KONTROLU   *****************************
+
+kucuk=False
+buyuk=False
+rakam=False
+rakamlar=["0","1","2","3","4","5","6","7","8","9"]
+while True:
+    parola=input("Parola Girin: ")
+    if len(parola)>=6 and len(parola)<=12:
+        for i in parola:
+            if i.islower()==True:
+               kucuk=True
+        for i in parola:
+            if i in rakamlar:
+                rakam = True
+        for i in parola:
+            if i.isupper() == True:
+                buyuk = True
+        if (kucuk==True) and (buyuk == True) and (rakam == True):
+            print("Sifreniz: {}".format(parola))
+            break
+        else:
+            print("Sifreniz en az bir Buyuk harf, bir Kucuk harf ve Rakamlardan olusmalidir")
+            kucuk = False
+            buyuk = False
+            rakam = False
+    elif parola=="q":
+        print("Program Sonlandiriliyor!!")
+        break
+    else:
+        print("Lutfen 6 ile 12 karakter araliginda bir sayi girin!!")
+        
+        
+*****************************   SAYI TAHMIN OYUNU   *****************************
+
+tahmin_hakki=5
+sayi=9
+while tahmin_hakki>0:
+    tahmin = int(input("1 ile 10 Arasinda bir sayi girin :"))
+    if tahmin != sayi:
+        tahmin_hakki -= 1
+        print("Bilemediniz. Kalan tahmin hakkiniz {} ".format(tahmin_hakki))
+    elif tahmin==sayi:
+        if tahmin_hakki == 5 or tahmin_hakki == 4:
+            print("Tebrikler Bildiniz *")
+            break
+        elif tahmin_hakki == 3 or tahmin_hakki == 2:
+            print("Tebrikler Bildiniz **")
+            break
+        elif tahmin_hakki == 1:
+            print("Tebrikler Bildiniz ***")
+            break
+
+
+*****************************   ATM   *****************************
+
+print(""""
+
+Islemler:
+1.Bakiye Ogren
+2.Para Yatir
+3.Para Cek
+4.Cikis
+
+""")
+
+bakiye=1000
+
+islem=input("Yapmak Istediginiz Islemi Secin:")
+
+while True:
+    if(islem=="1"):
+        print("Bakiyeniz {} €.".format(bakiye))
+        islem = input("Yapmak Istediginiz Islemi Secin:")
+
+    elif(islem=="2"):
+        yatirilacak_miktar = input("Yatirmak Istediginiz Tutari Girin:")
+        bakiye = bakiye + int(yatirilacak_miktar)
+        print("Yeni Bakiyeniz : {} €".format(bakiye))
+        islem = input("Yapmak Istediginiz Islemi Secin:")
+
+    elif (islem == "3"):
+        cekilecek_miktar = 0
+        cekilecek_miktar = int(input("Cekmek Istediginiz Miktari Girin:"))
+        if (cekilecek_miktar > bakiye):
+            print("Hesabinizda Yeterli Bakiye Bulunmamaktadir.Bakiyeniz : {} €".format(bakiye))
+            islem = input("Yapmak Istediginiz Islemi Secin:")
+        else:
+            bakiye = bakiye - cekilecek_miktar
+            print("Kalan Bakiyeniz : {} €".format(bakiye))
+            islem = input("Yapmak Istediginiz Islemi Secin:")
+
+    elif (islem == "4"):
+        print("Kartiniz Iade Ediliyor.. Tesekkurler..")
+        break
+    else:
+        print("Lutfen Gecerli Bir Islem Secin!")
+        islem = input("Yapmak Istediginiz Islemi Secin:")
+
