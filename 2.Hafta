@@ -116,13 +116,13 @@ while tahmin_hakki>0:
         print("Bilemediniz. Kalan tahmin hakkiniz {} ".format(tahmin_hakki))
     elif tahmin==sayi:
         if tahmin_hakki == 5 or tahmin_hakki == 4:
-            print("Tebrikler Bildiniz *")
+            print("Tebrikler Bildiniz ***")
             break
         elif tahmin_hakki == 3 or tahmin_hakki == 2:
             print("Tebrikler Bildiniz **")
             break
         elif tahmin_hakki == 1:
-            print("Tebrikler Bildiniz ***")
+            print("Tebrikler Bildiniz *")
             break
 
 
