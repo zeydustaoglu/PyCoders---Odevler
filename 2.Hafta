@@ -113,10 +113,7 @@ while tahmin_hakki>0:
     tahmin = int(input("1 ile 10 Arasinda bir sayi girin :"))
     if tahmin != sayi:
         tahmin_hakki -= 1
-        if tahmin_hakki==0:
-            print("Basarisiz oldunuz. Tahmin hakkiniz kalmadi.")
-        else:
-            print("Bilemediniz. Kalan tahmin hakkiniz {} ".format(tahmin_hakki))
+        print("Bilemediniz. Kalan tahmin hakkiniz {} ".format(tahmin_hakki))
 
     elif tahmin==sayi:
         if tahmin_hakki == 5 or tahmin_hakki == 4:
@@ -128,7 +125,8 @@ while tahmin_hakki>0:
         elif tahmin_hakki == 1:
             print("Tebrikler Bildiniz *")
             break
-            
+
+print("Basarisiz oldunuz. Tahmin hakkiniz kalmadi.")
             
 *****************************   ATM   *****************************
 
