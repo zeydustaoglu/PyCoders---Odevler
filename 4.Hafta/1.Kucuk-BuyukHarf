@@ -1,0 +1,10 @@
+try:
+    str = input("Bir cumle yazin: ")
+    # We took the string from the user
+
+    str = str.upper()
+    # we converted small letters to upper case and we put them in str
+
+    print(str)
+except:
+    print("Gecersiz Islem..")
