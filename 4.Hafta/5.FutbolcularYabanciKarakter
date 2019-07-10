@@ -1,0 +1,39 @@
+# 5-)Futbolcular dosyasındaki futbolcu isimlerini yazdığınız program ile
+# Türkçe karakter içermeyecek bir hale getirip yeni bir dosyaya kaydediniz.
+
+try:
+    futbolcular = open(r"futbolcular.txt", "r")
+    # we opened our txt file in read mode
+
+    yeni_liste = open(r"yeni_liste.txt", "w")
+    # we created the new txt file
+
+    turkce_karakterler = ["ş", "ü", "ö", "ğ", "ı", "ç"]
+    satirlar = futbolcular.readlines()
+    # we have put all of lines in list
+    
+    for satir in satirlar:
+        # we have controlled in lines if there is any turkish caracters we replace all of them
+        if "ş" in satir or "ü" in satir or "ö" in satir or "ğ" in satir or "ı" in satir or "ç" in satir \
+                or "Ş" in satir or "Ü" in satir or "Ö" in satir or "Ğ" in satir or "İ" in satir or "Ç" in satir:
+            # firstly lower case
+            satir = satir.replace("ş", "s")
+            satir = satir.replace("ç", "c")
+            satir = satir.replace("ü", "u")
+            satir = satir.replace("ö", "o")
+            satir = satir.replace("ğ", "g")
+            satir = satir.replace("ı", "i")
+
+            # than we change upper case
+            satir = satir.replace("Ş", "S")
+            satir = satir.replace("Ç", "C")
+            satir = satir.replace("Ü", "U")
+            satir = satir.replace("Ö", "O")
+            satir = satir.replace("Ğ", "G")
+            satir = satir.replace("İ", "I")
+
+        yeni_liste.write(satir)
+
+    futbolcular.close()
+except:
+    print("Kaynak dosya bulunamadi!")
