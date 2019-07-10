@@ -1,0 +1,31 @@
+# 2-)Kullanıcıdan bir input alınız. Girmiş olduğu inputta büyük harf sayısı,
+# küçük harf sayısı, rakam sayısı ve bunların haricindeki
+# özel karakter sayılarını veren bir program yazınız.
+
+try:
+    # We took the string from user
+    str = input("Bir string girin :")
+
+    # we created our counters
+    kucukHarf = 0
+    buyukHarf = 0
+    rakam = 0
+    ozelKarakter = 0
+
+    # created a list of
+    rakamlar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+    for i in str:
+        if i.islower() == True:
+            kucukHarf += 1
+        elif i.isupper() == True:
+            buyukHarf += 1
+        elif i in rakamlar:
+            rakam += 1
+        else:
+            ozelKarakter += 1
+
+    print("\nKucuk Harf Adedi : {} \nBuyuk Harf Adedi : {} \nRakam Adedi : {} \nOzel Karakter Adedi : {}".format(
+        kucukHarf, buyukHarf, rakam, ozelKarakter))
+except:
+    print("Gecersiz Islem..")
