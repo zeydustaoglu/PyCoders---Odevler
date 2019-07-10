@@ -1,0 +1,22 @@
+# 4-)Futbolcular dosyasındaki futbolculardan ismi sesli harf ile
+# başlayanları ayrı bir dosyaya yazdırınız.
+
+try:
+    futbolcular = open("futbolcular.txt", "r")
+    # we opened our txt file in read mode
+
+    sesliharfler = "AEIİOU"
+
+    sesliharfli_futbolcular = open(r"sesliharfli_futbolcular.txt", "w")
+    # we created the new txt file
+
+    satirlar = futbolcular.readlines()
+    # we have put all of lines in list
+
+    for satir in satirlar:
+        if satir[0] in sesliharfler:
+            # in the line, if first index is in our sesliharfler list we will write the line in our new txt
+            sesliharfli_futbolcular.write(satir)
+    futbolcular.close()
+except:
+    print("Gecersiz Islem..")
