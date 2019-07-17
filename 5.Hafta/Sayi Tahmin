@@ -1,0 +1,36 @@
+sayi="1234"
+ayni_yer=0
+farkli_yer=0
+while True:
+    tahmin=str(input("4 basamkli bir sayi girin: "))
+    if len(tahmin)==4:
+        if sayi == tahmin:
+            print("Tebrikler bildiniz!")
+            break
+        else:
+            for i in sayi:
+                for j in tahmin:
+                    # print("j:", j)
+                    # print("{} esit mi {} ye".format(i,j))
+                    if i==j:
+                        # print("{} esit".format(i))
+                        iindex = sayi.index(i)
+                        jindex = tahmin.index(j)
+
+                        if iindex==jindex:
+                            # print("{}in indexi {} esit {}in indexi {} e".format(int(i),iindex,int(j),jindex))
+                            # print("yerleri ayni +1")
+                            ayni_yer+=1
+                        else:
+                            # print("{}in indexi {} esit degil {}in indexi {} e".format(int(i),iindex,int(j),jindex))
+                            # print("yerleri farkli -1")
+                            farkli_yer-=1
+
+
+    else:
+        print("Lutfen 4 basamakli bir sayi girin!")
+        continue
+    print("+{} {}".format(ayni_yer,farkli_yer))
+    farkli_yer=0
+    ayni_yer=0
+
