@@ -1,0 +1,120 @@
+adam=[
+    '''          
+         ____
+        |    |     
+        |    O     Yanlis tahmin :(    5 hakkiniz kaldi!!
+        |
+        |
+      -----
+      ''',
+    '''          
+         ____
+        |    |
+        |    O     Yanlis tahmin :(    4 hakkiniz kaldi!!
+        |    | 
+        |
+      -----
+      ''',
+    '''  
+         ____
+        |    |
+        |    O     Yanlis tahmin :(    3 hakkiniz kaldi!!
+        |    |\ 
+        |
+      -----
+      ''',
+      '''  
+         ____
+        |    |
+        |    O     Yanlis tahmin :(    2 hakkiniz kaldi!!
+        |   /|\ 
+        |
+      -----
+      ''',
+      '''  
+         ____
+        |    |
+        |    O     Yanlis tahmin :(    1 hakkiniz kaldi!!
+        |   /|\ 
+        |     \    
+      -----
+      ''',
+      '''  
+         ____
+        |    |
+        |    O     Tahmin hakkiniz bitti :(   Kaybettiniz!!
+        |   /|\ 
+        |   / \ 
+      -----
+      ''',
+
+]
+import random
+kelime="python"
+hak=6
+index=0
+bilinen = [" "] * len(kelime)
+
+#hak 0 a esit olmadigi surece dongu calisacak
+while hak!=0:
+    harf=input("Harf girin:").lower()
+    #kullanicidan harf aldik
+
+    sayac=0
+    #kullanici tek seferde birden fazla harf bilirse,printi sadece 1 kez calistirabilmek icin sayac tanimladik
+    if  isinstance(harf,str)==False :
+        #girilen deger harf degil ise;
+        print("Lutfen bir harf girin! ")
+        continue
+    elif len(harf)!=1:
+        #birden fazla harf girilirse;
+        print("Lutfen tek bir harf girin! ")
+        continue
+    else:
+        for i in kelime:
+            #kullanicinin tahmin ettigi harfin kelimede hangi indexte oldugunu bulabilmek icin bir sayac tanimladik.
+            index+=1
+
+            if i==harf:
+                #harf kelime icinde var ise;
+                harf_adet = kelime.count(harf)
+                #kullanicinin bildigi harfi, tamamladigi kelimeye(listeye) indexine gore yerlestirdik
+                bilinen[index-1]=harf
+                if sayac==0:
+                    print("Tebrikler. Kelimede {} adet '{}' harfi bulunmaktadir.".format(harf_adet, harf))
+                    sayac=1
+            if " " not in bilinen:
+                #bilinen kelime listemizde bos karakter kalmadi ise bilmis sayilir.programdan cikis yaptik
+                print("Tebrikler Bildiniz")
+                exit()
+        if harf not in kelime:
+            #harf kelime icinde yok ise;
+            hak -= 1
+            #her bilemediginde kelimemizden rastgele bir harfi ipucu amaciyla gosteriyoruz
+            b = random.choice(kelime)
+            bindex=kelime.index(b)
+            bilinen[bindex]=b
+
+            if hak == 5:
+                print(adam[0])
+            elif hak == 4:
+                print(adam[1])
+            elif hak == 3:
+                print(adam[2])
+            elif hak == 2:
+                print(adam[3])
+            elif hak == 1:
+                print(adam[4])
+            elif hak == 0 and " " in bilinen:
+                print(adam[5])
+                break
+
+        index=0
+        print(bilinen)
+
+
+
+
+
+
+
