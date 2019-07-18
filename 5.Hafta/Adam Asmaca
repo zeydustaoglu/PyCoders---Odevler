@@ -87,6 +87,7 @@ try:
                         sayac = 1
                 if " " not in bilinen:
                     # bilinen kelime listemizde bos karakter kalmadi ise bilmis sayilir.programdan cikis yaptik
+                    print(bilinen)
                     print("Tebrikler Bildiniz")
                     exit()
             if harf not in kelime:
@@ -113,7 +114,5 @@ try:
 
             index = 0
             print(bilinen)
-
-
-except:
+except():
     print("Hatali islem. Programdan cikiliyor!")
