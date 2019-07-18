@@ -1,0 +1,12 @@
+sayilar=[1,2,3,4,5,6,7,8,9,10]
+harfler=['a','b','c','d','e','f','g','h','i','j']
+
+liste1=[[str(s)+h for h in harfler] for s in sayilar]
+#sayilar listesindeki her sayiyi teker teker harfler listesi icinde gezdirdik ve sayi onde olacak sekilde birlestirdik 
+
+liste2=[[h+str(s) for s in sayilar] for h in harfler]
+#harfler listesindeki her harfi teker teker sayilar listesi icinde gezdirdik ve harf onde olacak sekilde birlestirdik 
+
+print("1.",liste1)
+print("2.",liste2)
+
