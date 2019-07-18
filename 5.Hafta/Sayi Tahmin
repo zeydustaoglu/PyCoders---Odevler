@@ -7,25 +7,29 @@ try:
         if len(tahmin) == 4:
             if tahmin.isnumeric():
                 # girilen tahmin numeric mi;
-                if sayi == tahmin:
-                    print("Tebrikler bildiniz!")
-                    break
-                else:
-                    for i in sayi:
-                        for j in tahmin:
-                            # belirlenen sayi ile tahmin edilen sayinin elemanlarini teker teker kontrol ediyoruz
-                            if i == j:
-                                # ayni sayi var ise;
-                                iindex = sayi.index(i)
-                                jindex = tahmin.index(j)
-                                # esit olan sayilarin indexlerini aldik
+                if '0' not in tahmin:
+                    if sayi == tahmin:
+                        print("Tebrikler bildiniz!")
+                        break
+                    else:
+                        for i in sayi:
+                            for j in tahmin:
+                                # belirlenen sayi ile tahmin edilen sayinin elemanlarini teker teker kontrol ediyoruz
+                                if i == j:
+                                    # ayni sayi var ise;
+                                    iindex = sayi.index(i)
+                                    jindex = tahmin.index(j)
+                                    # esit olan sayilarin indexlerini aldik
 
-                                if iindex == jindex:
-                                    # indexleri esit ise yani yerleri ayni ise;
-                                    ayni_yer += 1
-                                else:
-                                    # ayni sayi ama yerleri farkli ise;
-                                    farkli_yer -= 1
+                                    if iindex == jindex:
+                                        # indexleri esit ise yani yerleri ayni ise;
+                                        ayni_yer += 1
+                                    else:
+                                        # ayni sayi ama yerleri farkli ise;
+                                        farkli_yer -= 1
+                else:
+                    print("Lutfen icerisinde 0 olamayan bir 4 basamakli bir SAYI girin!")
+                    continue
             else:
                 print("Lutfen 4 basamakli bir SAYI girin!")
                 continue
